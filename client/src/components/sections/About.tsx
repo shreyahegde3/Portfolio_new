@@ -12,8 +12,8 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-10">
             <div className="md:w-2/3">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Hello! I'm a passionate web developer with a background in computer science and a love for creating beautiful, functional websites. 
-                My journey in web development started at university where I discovered my passion for coding.
+                Hello! I'm a passionate web developer with a background in computer science. 
+                My journey  started at PES  university where I discovered my passion for development, ai...
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Since then, I've worked on a variety of projects, ranging from small business websites to complex web applications.

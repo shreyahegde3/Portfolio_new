@@ -165,17 +165,17 @@ export default function Home() {
       )}
 
       {/* Left Sidebar - Profile */}
-      <aside className="hidden md:flex md:w-1/3 lg:w-1/4 flex-col bg-black border-r border-gray-800 p-8 h-screen sticky top-0 overflow-y-auto">
+      <aside className="hidden md:flex md:w-1/3 lg:w-1/4 flex-col bg-black border-r border-gray-800 p-8 h-screen sticky top-0 overflow-y-auto scrollbar-hide">
         <div className="flex flex-col items-center mb-8">
           <div className="relative w-40 h-40 rounded-2xl overflow-hidden mb-6 border-2 border-gray-800">
             <img 
               src="https://placehold.co/400x400/282828/a885d8/png?text=AW&font=montserrat" 
-              alt="Alex Walker" 
+              alt="Shreya Hegde" 
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-2xl font-bold text-primary mb-1">Alex Walker</h1>
-          <p className="text-gray-400 mb-4">Digital Designer & Illustrator</p>
+          <h1 className="text-2xl font-bold text-primary mb-1">Shreya Hegde</h1>
+          <p className="text-gray-400 mb-4">A computer science student</p>
           
           <div className="flex space-x-3 mb-6">
             {socialLinks.map((link, index) => (
@@ -215,8 +215,8 @@ export default function Home() {
         </div>
         
         <div className="mt-auto">
-          <p className="text-sm text-gray-500 mb-3">Based in San Francisco, CA</p>
-          <p className="text-sm text-gray-500">© 2025 Alex Walker. All rights reserved.</p>
+          <p className="text-sm text-gray-500 mb-3">Based in Bangalore, India</p>
+          <p className="text-sm text-gray-500">© 2025 Shreya Hegde. All rights reserved.</p>
         </div>
       </aside>
       
@@ -228,12 +228,13 @@ export default function Home() {
             <div className="mb-8">
               <span className="text-primary text-sm font-medium mb-2 block">Hello there</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                I'm Alex Walker
+                I'm Shreya Hegde
                 <br />
-                <span className="text-primary">Digital designer</span> and illustrator.
+                <span className="text-primary">A computer science student</span> and a developer.
               </h2>
               <p className="text-gray-400 text-lg mb-8 max-w-2xl">
-                A passionate digital designer with over 5 years of experience creating engaging and intuitive user interfaces. I specialize in crafting beautiful, functional designs that solve real problems.
+              Hello! I'm a passionate web developer with a background in computer science. 
+              My journey  started at PES  university where I discovered my passion for development, ai..
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">

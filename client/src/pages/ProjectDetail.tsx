@@ -35,7 +35,7 @@ export default function ProjectDetail() {
       <header className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md z-40 px-6 py-4 border-b border-gray-800">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <Link href="/">
-            <a className="text-xl font-bold text-primary">Alex Walker</a>
+            <a className="text-xl font-bold text-primary">Shreya Hegde</a>
           </Link>
           <Link href="/#projects">
             <a className="inline-flex items-center text-white hover:text-primary transition-colors">

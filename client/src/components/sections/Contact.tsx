@@ -117,7 +117,7 @@ export default function Contact() {
             <h3 className="text-xl font-semibold text-white mb-4">Follow Me</h3>
             <div className="flex flex-wrap gap-3">
               <a 
-                href="https://github.com/yourusername"
+                href="https://github.com/shreyahegde3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
@@ -133,24 +133,8 @@ export default function Contact() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://twitter.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
+
+
               </a>
             </div>
           </div>

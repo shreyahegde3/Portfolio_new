@@ -14,33 +14,32 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform with shopping cart, user authentication, and payment integration.",
-    image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    title: "YouTube video summarizer",
+    description: "Enhanced RAG & Agent Q&A System",
+    image: "/images/rag.png",
     category: "web",
-    technologies: ["React", "Node.js", "MongoDB"],
-    githubLink: "https://github.com/yourusername/ecommerce-platform",
-    liveLink: "https://ecommerce-platform.vercel.app",
-    detailDescription: "An end-to-end e-commerce solution with advanced features like real-time inventory management, secure payment processing, and a responsive admin dashboard. This platform provides a seamless shopping experience across all devices.",
+    technologies: ["Python", "gradio","pinecode"],
+    githubLink: "https://github.com/shreyahegde3/YouTube-video-summarizer",
+    liveLink: "https://huggingface.co/spaces/ShreyaMHegde/AIPoweredChatBot",
+    detailDescription: "An advanced question-answering system that combines Retrieval-Augmented Generation (RAG) and Agent-based reasoning with YouTube video integration for comprehensive educational responses.",
     features: [
-      "User authentication and authorization",
-      "Product catalog with categories and filters",
-      "Shopping cart and checkout process",
-      "Payment integration with Stripe",
-      "Order tracking and history",
-      "Admin dashboard for inventory management"
+      "Dual Operational Modes:RAG Mode,Agent Mode",
+      "Multiple Prompting Techniques",
+      "Dynamic Knowledge Base",
+      "Smart Video Integration"
+
     ]
   },
   {
     id: "fitness-tracker",
-    title: "Fitness Tracker App",
-    description: "A cross-platform mobile application for tracking workouts, nutrition, and fitness goals.",
+    title: "BD_project_EmoStream",
+    description: "EmoStream: Concurrent Emoji Broadcast over Event-Driven Architecture",
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
     category: "mobile",
     technologies: ["React Native", "Firebase", "Redux"],
-    githubLink: "https://github.com/yourusername/fitness-tracker",
+    githubLink: "https://github.com/shreyahegde3/BD_project_EmoStream",
     liveLink: "https://fitness-tracker.vercel.app",
-    detailDescription: "This fitness application helps users track their workout progress, set goals, and monitor nutrition intake. It features customizable workout plans and integrates with health devices for comprehensive fitness tracking.",
+    detailDescription: "creating a horizontally scalable architecture using frameworks such as Kafka for data streaming and Spark for real-time data processing. The system will enable high concurrency and low latency, ensuring user interactions are seamless.",
     features: [
       "Personalized workout plans",
       "Nutrition tracking and meal planning",
