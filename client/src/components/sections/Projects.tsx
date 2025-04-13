@@ -1,46 +1,16 @@
-import { useState } from "react";
-import { projects, getProjectsByCategory } from "@/data/projectsData";
+import { projects, Project } from "@/data/projectsData";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
-// Project category filter buttons
-const categories = [
-  { value: "all", label: "All" },
-  { value: "web", label: "Web Apps" },
-  { value: "mobile", label: "Mobile" },
-  { value: "design", label: "UI/UX Design" },
-];
-
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const filteredProjects = getProjectsByCategory(activeCategory);
-
   return (
     <div>
-      {/* Project Filters */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        {categories.map((category) => (
-          <Button
-            key={category.value}
-            variant={activeCategory === category.value ? "default" : "outline"}
-            onClick={() => setActiveCategory(category.value)}
-            className={`${
-              activeCategory === category.value 
-                ? "bg-primary hover:bg-primary/90" 
-                : "border-gray-800 text-gray-400 hover:text-white"
-            }`}
-          >
-            {category.label}
-          </Button>
-        ))}
-      </div>
-      
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8">
-        {filteredProjects.map((project, index) => (
+        {projects.map((project: Project, index: number) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
@@ -96,7 +66,7 @@ export default function Projects() {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                  {project.technologies.slice(0, 4).map((tech: string, techIndex: number) => (
                     <Badge 
                       key={techIndex} 
                       className="bg-gray-800 hover:bg-gray-700 text-gray-300 border-none"
