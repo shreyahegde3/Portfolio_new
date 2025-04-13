@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { Link } from "wouter";
-import { ArrowUp, Github, Linkedin, Mail, FileText, Menu, X } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail, FileText, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
@@ -48,11 +48,13 @@ export default function Home() {
     }
   }, [location]);
 
-  // Handle scroll for mobile devices
+  // Handle scroll for updating active section
   useEffect(() => {
     const handleScroll = () => {
+      const sections = ["about", "skills", "projects", "contact"];
+      
       if (window.innerWidth < 768) {
-        const sections = ["about", "skills", "projects", "contact"];
+        // For mobile, track window scroll
         for (let i = sections.length - 1; i >= 0; i--) {
           const section = document.getElementById(sections[i]);
           if (section && window.scrollY >= section.offsetTop - 100) {
@@ -60,11 +62,38 @@ export default function Home() {
             break;
           }
         }
+      } else {
+        // For desktop, track main element scroll
+        const mainContent = document.querySelector("main");
+        if (mainContent) {
+          const scrollPosition = mainContent.scrollTop;
+          
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const section = document.getElementById(sections[i]);
+            if (section && scrollPosition >= section.offsetTop - 100) {
+              setActiveSection(sections[i]);
+              break;
+            }
+          }
+        }
       }
     };
 
+    // Add scroll listener to window for mobile
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Add scroll listener to main element for desktop
+    const mainContent = document.querySelector("main");
+    if (mainContent) {
+      mainContent.addEventListener("scroll", handleScroll);
+    }
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (mainContent) {
+        mainContent.removeEventListener("scroll", handleScroll);
+      }
+    };
   }, []);
 
   // Handle navigation click
@@ -72,10 +101,20 @@ export default function Home() {
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
     
-    if (window.innerWidth < 768) {
-      const element = document.getElementById(sectionId);
-      if (element) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      if (window.innerWidth < 768) {
         element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // For desktop, we need to scroll the right sidebar
+        const mainContent = document.querySelector("main");
+        if (mainContent) {
+          const topPosition = element.offsetTop;
+          mainContent.scrollTo({
+            top: topPosition - 20,
+            behavior: "smooth"
+          });
+        }
       }
     }
   };
@@ -153,7 +192,7 @@ export default function Home() {
             ))}
           </div>
           
-          <Button className="w-full mb-6">Let's Talk</Button>
+          <Button className="w-full mb-6" onClick={() => handleNavClick("contact")}>Let's Talk</Button>
         </div>
         
         <div className="mb-8">
@@ -197,8 +236,19 @@ export default function Home() {
                 A passionate digital designer with over 5 years of experience creating engaging and intuitive user interfaces. I specialize in crafting beautiful, functional designs that solve real problems.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg">Download CV</Button>
-                <Button size="lg" variant="outline">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="flex items-center gap-2">
+                    <FileText className="h-4 w-4" />
+                    Download CV
+                  </Button>
+                </a>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  onClick={() => handleNavClick("projects")}
+                  className="flex items-center gap-2"
+                >
+                  <ArrowRight className="h-4 w-4" />
                   My Projects
                 </Button>
               </div>
