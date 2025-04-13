@@ -30,9 +30,17 @@ function App() {
     }
   }, [theme]);
 
+  // Apply black background to the entire app
+  useEffect(() => {
+    document.body.style.backgroundColor = "#000000";
+    return () => {
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="font-sans text-gray-800 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 min-h-screen">
+      <div className="font-sans text-white min-h-screen">
         <Router />
         <Toaster />
       </div>
