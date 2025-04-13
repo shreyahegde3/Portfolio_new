@@ -76,172 +76,175 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-2">Get In Touch</h2>
-          <div className="w-20 h-1 bg-primary mb-10"></div>
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div>
+          <p className="text-gray-400 mb-6">
+            I'm currently available for freelance work. Whether you have a project in mind, a question, or just want to say hi, 
+            I'll get back to you as soon as possible!
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, 
-                I'll do my best to get back to you!
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4">
-                    <Mail className="h-5 w-5 text-primary" />
-                  </div>
-                  <a 
-                    href="mailto:hello@example.com" 
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-                  >
-                    hello@example.com
-                  </a>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center mr-4">
-                    <MapPin className="h-5 w-5 text-primary" />
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    San Francisco, CA
-                  </span>
-                </div>
+          <div className="space-y-6 mb-8">
+            <div className="flex items-center">
+              <div className="w-12 h-12 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center mr-4">
+                <Mail className="h-5 w-5 text-primary" />
               </div>
-              
-              <div className="flex space-x-4">
+              <div>
+                <p className="text-gray-500 text-sm mb-1">Email</p>
                 <a 
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                  aria-label="GitHub"
+                  href="mailto:alex.walker@example.com" 
+                  className="text-white hover:text-primary transition-colors"
                 >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a 
-                  href="https://linkedin.com/in/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a 
-                  href="https://twitter.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a 
-                  href="https://instagram.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
+                  alex.walker@example.com
                 </a>
               </div>
             </div>
             
-            <div>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="Your name" 
-                            {...field} 
-                            className="dark:border-gray-600 dark:bg-gray-700"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="email" 
-                            placeholder="Your email address" 
-                            {...field}
-                            className="dark:border-gray-600 dark:bg-gray-700"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="Subject" 
-                            {...field}
-                            className="dark:border-gray-600 dark:bg-gray-700"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Your message" 
-                            rows={4} 
-                            {...field}
-                            className="dark:border-gray-600 dark:bg-gray-700"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="px-6 py-3 bg-primary hover:bg-blue-600 text-white rounded-md shadow-md"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </Form>
+            <div className="flex items-center">
+              <div className="w-12 h-12 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center mr-4">
+                <MapPin className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-gray-500 text-sm mb-1">Location</p>
+                <span className="text-white">
+                  San Francisco, CA
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+            <h3 className="text-xl font-semibold text-white mb-4">Follow Me</h3>
+            <div className="flex flex-wrap gap-3">
+              <a 
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://instagram.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-lg bg-black border border-gray-800 flex items-center justify-center hover:border-primary transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
+        
+        <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl">
+          <h3 className="text-xl font-semibold text-white mb-6">Send a Message</h3>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-400">Name</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="Your name" 
+                        {...field} 
+                        className="border-gray-800 bg-gray-950 focus:border-primary"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-400">Email</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        {...field}
+                        className="border-gray-800 bg-gray-950 focus:border-primary"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-400">Subject</FormLabel>
+                    <FormControl>
+                      <Input 
+                        placeholder="Subject" 
+                        {...field}
+                        className="border-gray-800 bg-gray-950 focus:border-primary"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-400">Message</FormLabel>
+                    <FormControl>
+                      <Textarea 
+                        placeholder="Your message" 
+                        rows={4} 
+                        {...field}
+                        className="border-gray-800 bg-gray-950 focus:border-primary resize-none"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full py-6 bg-primary hover:bg-primary/90 text-white"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </Form>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
